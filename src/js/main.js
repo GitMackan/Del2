@@ -29,7 +29,7 @@ function getCourses() {
                 <span>${course.code}</span>
                 <span>${course.name}</span>
                 <span>${course.prog}</span>
-                <span>${course.syllabus}</span>
+                <span><a href="${course.syllabus}">Länk</a></span>
                 <button id="${course.id}" onClick="deleteCourse(${course.id})">Radera</button>
             </li>`
         })

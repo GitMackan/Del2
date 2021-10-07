@@ -79,6 +79,9 @@ a {
     text-decoration: none;
     color: black;
 }
+span a:hover {
+    text-decoration: underline;
+}
 
 // Formulär
 form {

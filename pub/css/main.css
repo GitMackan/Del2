@@ -79,6 +79,10 @@ a {
   color: black;
 }
 
+span a:hover {
+  text-decoration: underline;
+}
+
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
