@@ -1,1 +1,63 @@
-"use strict";let coursesEl=document.getElementById("courses"),addButton=document.getElementById("addCourse"),codeInput=document.getElementById("code"),nameInput=document.getElementById("name"),progInput=document.getElementById("prog"),syllabusInput=document.getElementById("syllabus");function getCourses(){coursesEl.innerHTML="",fetch("https://studenter.miun.se/~many2005/dt173g/moment5/api.php").then((e=>e.json())).then((e=>{e.forEach((e=>{coursesEl.innerHTML+=`<li>\n                <span>${e.code}</span>\n                <span>${e.name}</span>\n                <span>${e.prog}</span>\n                <span><a href="${e.syllabus}">Länk</a></span>\n                <button id="${e.id}" onClick="deleteCourse(${e.id})">Radera</button>\n            </li>`}))}))}function deleteCourse(e){fetch("https://studenter.miun.se/~many2005/dt173g/moment5/api.php?id="+e,{method:"DELETE"}).then((e=>e.json())).then((e=>{getCourses()})).catch((e=>{console.log("Error: ",e)}))}function addCourse(){let e={code:codeInput.value,name:nameInput.value,prog:progInput.value,syllabus:syllabusInput.value};fetch("https://studenter.miun.se/~many2005/dt173g/moment5/api.php",{method:"POST",body:JSON.stringify(e)}).then((e=>e.json())).then((e=>{getCourses()})).catch((e=>{console.log("Error: ",e)}))}window.addEventListener("load",getCourses),addButton.addEventListener("click",addCourse);
+"use strict"; // Variabler
+
+var coursesEl = document.getElementById("courses");
+var addButton = document.getElementById("addCourse");
+var codeInput = document.getElementById("code");
+var nameInput = document.getElementById("name");
+var progInput = document.getElementById("prog");
+var syllabusInput = document.getElementById("syllabus"); // Händelsehanterare
+
+window.addEventListener('load', getCourses);
+addButton.addEventListener('click', addCourse); // Funktioner
+// Funktion för att hämta kurser från API
+
+function getCourses() {
+  // Återställer vid laddning av sidan
+  coursesEl.innerHTML = "";
+  fetch('https://studenter.miun.se/~many2005/dt173g/moment5/api.php').then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    data.forEach(function (course) {
+      // Utskrift till DOM
+      coursesEl.innerHTML += "<li>\n                <span>".concat(course.code, "</span>\n                <span>").concat(course.name, "</span>\n                <span>").concat(course.prog, "</span>\n                <span><a href=\"").concat(course.syllabus, "\" target=\"_blank\">L\xE4nk</a></span>\n                <button id=\"").concat(course.id, "\" onClick=\"deleteCourse(").concat(course.id, ")\">Radera</button>\n            </li>");
+    });
+  });
+} // Funktion för att ta bort kurser
+
+
+function deleteCourse(id) {
+  fetch('https://studenter.miun.se/~many2005/dt173g/moment5/api.php?id=' + id, {
+    method: 'DELETE'
+  }).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    getCourses();
+  })["catch"](function (error) {
+    console.log('Error: ', error);
+  });
+} // Funktion för att lägga till kurser
+
+
+function addCourse() {
+  // Deklarerar värden från formulär till variabler
+  var code = codeInput.value;
+  var name = nameInput.value;
+  var prog = progInput.value;
+  var syllabus = syllabusInput.value;
+  var course = {
+    'code': code,
+    'name': name,
+    'prog': prog,
+    'syllabus': syllabus
+  };
+  fetch('https://studenter.miun.se/~many2005/dt173g/moment5/api.php', {
+    method: 'POST',
+    body: JSON.stringify(course)
+  }).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    getCourses();
+  })["catch"](function (error) {
+    console.log('Error: ', error);
+  });
+}
