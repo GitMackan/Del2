@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moment 5 - Del 2</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <h1>Moment 5 - Del 2</h1>
+    </header>
+    <div class="container">
+        <h2>Kurser jag läst:</h2>
+        <div class="courses-container">
+            <div class="headings">
+                <h4 class="bold left">Kurskod:</h4><h4 class="bold left">Kursnamn:</h4><h4 class="bold small">Progression:</h4><h4 class="bold right"><a href="">Kursplan:</a></h4><h4>Radera</h4>
+            </div>
+            <ul id="courses">
+                <!--Data from main.js-->
+            </ul>
+        </div>
+
+        <h2>Lägg till kurs</h2>
+
+         <!--Form - Interacts with main.js-->
+        <form>
+            <label for="kod">Kurskod:</label>
+            <label for="name">Kursnamn:</label>
+            <input type="text" name="code" id="code">
+            <input type="text" name="name" id="name">
+            <label for="prog">Progression:</label>
+            <label for="syllabus">Kursplan:</label>
+            <input type="text" name="prog" id="prog">
+            <input type="text" name="syllabus" id="syllabus">
+            <input type="submit" value="Lägg till kurs" id="addCourse">
+        </form>
+        
+    </div>
+    <!--Footer-->
+    <footer>
+        <p>Copyright Marcus Nygård 2021</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

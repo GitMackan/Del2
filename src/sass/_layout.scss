@@ -1,0 +1,111 @@
+// Variabler
+
+$main-font: 'Roboto', sans-serif;
+$primary: #f7f6f0;
+$special: #3d405b;
+
+body {
+    font-family: $main-font;
+    background: $primary;
+}
+
+// Header
+header {
+    height: 15vh;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    background: darken($special, 10);
+    margin-bottom: 3em;
+    color: $primary;
+}
+
+// Main content
+.container {
+    width: 70%;
+    margin: 0 auto;
+    h1 {
+        font-size: 3em;
+        margin: 2em 0;
+    }
+    h2 {
+        margin-bottom: 1em;
+    }
+}
+.headings {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+}
+
+
+// Utskrifter från API
+
+ul {
+    list-style: none;
+    box-sizing: border-box;
+    li {
+        display: flex;
+        font-size: 1.3em;
+        margin: 1em 0;
+        border-bottom: 1px solid black;
+        padding: 1em 0;
+        font-weight: 400;
+        span:nth-child(1) {
+            width: 300px;
+        }
+        span:nth-child(2) {
+            width: 375px;
+        }
+        span:nth-child(3) {
+            width: 290px;
+        }
+        span:nth-child(4) {
+            width: 275px;
+        }
+    }
+}
+button {
+    background: $special;
+    color: $primary;
+    padding: .5em;
+}
+button:hover {
+    text-decoration: underline;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+// Formulär
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    label {
+        font-size: 1.5em;
+    }
+    input {
+        height: 2.5em;
+        width: 80%;
+        margin-bottom: 2em;
+    }
+}
+#addCourse {
+    width: 50%;
+    color: $primary;
+    background-color: $special;
+}
+
+// Footer 
+
+footer {
+    height: 10vh;
+    background:darken($special, 15);
+    color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

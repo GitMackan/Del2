@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f7f6f0;
+}
+
+header {
+  height: 15vh;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  background: #292b3c;
+  margin-bottom: 3em;
+  color: #f7f6f0;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+.container h1 {
+  font-size: 3em;
+  margin: 2em 0;
+}
+.container h2 {
+  margin-bottom: 1em;
+}
+
+.headings {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3em;
+}
+
+ul {
+  list-style: none;
+  box-sizing: border-box;
+}
+ul li {
+  display: flex;
+  font-size: 1.3em;
+  margin: 1em 0;
+  border-bottom: 1px solid black;
+  padding: 1em 0;
+  font-weight: 400;
+}
+ul li span:nth-child(1) {
+  width: 300px;
+}
+ul li span:nth-child(2) {
+  width: 375px;
+}
+ul li span:nth-child(3) {
+  width: 290px;
+}
+ul li span:nth-child(4) {
+  width: 275px;
+}
+
+button {
+  background: #3d405b;
+  color: #f7f6f0;
+  padding: 0.5em;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+form label {
+  font-size: 1.5em;
+}
+form input {
+  height: 2.5em;
+  width: 80%;
+  margin-bottom: 2em;
+}
+
+#addCourse {
+  width: 50%;
+  color: #f7f6f0;
+  background-color: #3d405b;
+}
+
+footer {
+  height: 10vh;
+  background: #1e202d;
+  color: #f7f6f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (max-width: 1350px) {
+  .container {
+    width: 90%;
+  }
+}
+@media all and (max-width: 985px) {
+  .container {
+    width: 95%;
+  }
+  .container h1 {
+    font-size: 2em;
+  }
+  .container h2 {
+    font-size: 1.5em;
+  }
+
+  .headings {
+    font-size: 1em;
+  }
+
+  ul li {
+    font-size: 1em;
+  }
+}
+@media all and (max-width: 700px) {
+  .container {
+    width: 98%;
+  }
+  .container h1 {
+    font-size: 2em;
+  }
+  .container h2 {
+    font-size: 1.5em;
+  }
+
+  .headings {
+    font-size: 0.8em;
+  }
+
+  ul {
+    list-style: none;
+    box-sizing: border-box;
+  }
+  ul li {
+    display: flex;
+    font-size: 0.8em;
+    margin: 1em 0;
+    border-bottom: 1px solid black;
+    padding: 1em 0;
+    font-weight: 400;
+  }
+  ul li span:nth-child(1) {
+    width: 250px;
+  }
+  ul li span:nth-child(2) {
+    width: 700px;
+  }
+  ul li span:nth-child(3) {
+    width: 100px;
+  }
+  ul li span:nth-child(4) {
+    width: 200px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  form label {
+    font-size: 1em;
+  }
+  form input {
+    height: 1.5em;
+    width: 80%;
+    margin-bottom: 2em;
+  }
+}
